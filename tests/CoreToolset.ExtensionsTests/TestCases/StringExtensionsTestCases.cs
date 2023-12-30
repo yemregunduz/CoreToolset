@@ -36,6 +36,7 @@ namespace CoreToolset.ExtensionsTests.TestCases
             }
         }
         #endregion
+
         #region IsEmailAddressTestCases
         public static IEnumerable<TestCaseData> IsEmailAddressTestCases
         {
@@ -67,6 +68,7 @@ namespace CoreToolset.ExtensionsTests.TestCases
             }
         }
         #endregion
+
         #region IsGuidTestCases
         public static IEnumerable<TestCaseData> IsGuidTestCases
         {
@@ -98,7 +100,8 @@ namespace CoreToolset.ExtensionsTests.TestCases
             }
         }
         #endregion
-        #region IsEqualsTestCasess
+
+        #region IsEqualsTestCases
         public static IEnumerable<TestCaseData> IsEqualsTestCases
         {
             get
@@ -130,6 +133,82 @@ namespace CoreToolset.ExtensionsTests.TestCases
                 yield return new TestCaseData("CaseInsensitive", "caseinsensitive", StringComparison.InvariantCultureIgnoreCase)
                     .Returns(true)
                     .SetName("IsEquals_WhenStringsAreEqualWithDifferentCasingAndWhenComparisonTypeInvariantCultureIgnoreCase_ReturnsTrue");
+            }
+        }
+        #endregion
+
+        #region IsNotNullOrEmptyTestCases
+        public static IEnumerable<TestCaseData> IsNotNullOrEmptyTestCases
+        {
+            get
+            {
+                yield return new TestCaseData("TestString")
+                    .Returns(true)
+                    .SetName("IsNotNullOrEmpty_WhenValidStringIsProvided_ReturnsTrue");
+
+                yield return new TestCaseData(string.Empty)
+                    .Returns(false)
+                    .SetName("IsNotNullOrEmpty_WhenEmptyStringIsProvided_ReturnsFalse");
+
+                yield return new TestCaseData(null)
+                    .Returns(false)
+                    .SetName("IsNotNullOrEmpty_WhenNullIsProvided_ReturnsFalse");
+
+                yield return new TestCaseData(" ")
+                    .Returns(true)
+                    .SetName("IsNotNullOrEmpty_WhenWhitespaceStringIsProvided_ReturnsTrue");
+            }
+        }
+        #endregion
+
+        #region IsNullOrEmptyTestCases
+        public static IEnumerable<TestCaseData> IsNullOrEmptyTestCases
+        {
+            get
+            {
+                yield return new TestCaseData("TestString")
+                    .Returns(false)
+                    .SetName("IsNullOrEmpty_WhenValidStringIsProvided_ReturnsFalse");
+
+                yield return new TestCaseData(string.Empty)
+                    .Returns(true)
+                    .SetName("IsNullOrEmpty_WhenEmptyStringIsProvided_ReturnsTrue");
+
+                yield return new TestCaseData(null)
+                    .Returns(true)
+                    .SetName("IsNullOrEmpty_WhenNullIsProvided_ReturnsTrue");
+
+                yield return new TestCaseData(" ")
+                    .Returns(false)
+                    .SetName("IsNullOrEmpty_WhenWhitespaceStringIsProvided_ReturnsFalse");
+            }
+        }
+        #endregion
+
+        #region IsPhoneOrFaxNumberTestCases
+        public static IEnumerable<TestCaseData> IsPhoneOrFaxNumberTestCases
+        {
+            get
+            {
+                yield return new TestCaseData("123-456-7890")
+                    .Returns(true)
+                    .SetName("IsPhoneOrFaxNumber_WhenValidPhoneNumberIsProvided_ReturnsTrue");
+
+                yield return new TestCaseData("987-654-3210")
+                    .Returns(true)
+                    .SetName("IsPhoneOrFaxNumber_WhenValidFaxNumberIsProvided_ReturnsTrue");
+
+                yield return new TestCaseData("InvalidNumber")
+                    .Returns(false)
+                    .SetName("IsPhoneOrFaxNumber_WhenInvalidNumberIsProvided_ReturnsFalse");
+
+                yield return new TestCaseData(null)
+                    .Returns(false)
+                    .SetName("IsPhoneOrFaxNumber_WhenNullIsProvided_ReturnsFalse");
+
+                yield return new TestCaseData(" ")
+                    .Returns(false)
+                    .SetName("IsPhoneOrFaxNumber_WhenWhitespaceIsProvided_ReturnsFalse");
             }
         }
         #endregion

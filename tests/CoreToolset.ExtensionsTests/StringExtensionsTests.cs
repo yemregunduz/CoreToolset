@@ -44,8 +44,34 @@ namespace CoreToolset.ExtensionsTests
         }
         #endregion
 
-       
+        #region IsNotNullOrEmpty
+        [TestCaseSource(typeof(StringExtensionsTestCases), nameof(StringExtensionsTestCases.IsNotNullOrEmptyTestCases))]
+        public bool IsNotNullOrEmpty_TestCases(string inputString)
+        {
+            bool result = inputString.IsNotNullOrEmpty();
+            return result;
+        }
+        #endregion
+
+        #region IsNullOrEmpty
+        [TestCaseSource(typeof(StringExtensionsTestCases), nameof(StringExtensionsTestCases.IsNullOrEmptyTestCases))]
+        public bool IsNullOrEmpty_TestCases(string inputString)
+        {
+            bool result = inputString.IsNullOrEmpty();
+            return result;
+        }
+        #endregion
+
+        #region IsPhoneOrFaxNumber
+        [TestCaseSource(typeof(StringExtensionsTestCases), nameof(StringExtensionsTestCases.IsPhoneOrFaxNumberTestCases))]
+        public bool IsPhoneOrFaxNumber_TestCases(string inputString)
+        {
+            bool result = inputString.IsPhoneOrFaxNumber();
+            return result;
+        }
+        #endregion
+
     }
 
-   
+
 }

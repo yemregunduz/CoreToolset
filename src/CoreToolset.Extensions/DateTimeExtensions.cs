@@ -49,6 +49,22 @@
             => !@this.IsEvenMonth();
         public static DateTime AddWeeks(this DateTime @this, int weeks)
             => @this.AddDays(7 * weeks);
+
+        public static int DaysUntil(this DateTime @this, DateTime until)
+            => (int)(until - @this).TotalDays;
+
+        public static int WeeksUntil(this DateTime @this, DateTime until)
+            => (int)(until - @this).TotalDays / 7;  
+
+        public static int MonthsUntil(this DateTime @this, DateTime until)
+            => (until.Year - @this.Year) * 12 + until.Month - @this.Month;
+
+        public static int YearsUntil(this DateTime @this, DateTime until)
+            => until.Year - @this.Year;
+
+        public static long ToUnixTimestamp(this DateTime dateTime)
+            => (long)(dateTime - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalSeconds;
+
         public static DateTime AddBusinessDays(this DateTime @this, int days)
         {
             int sign = Math.Sign(days);

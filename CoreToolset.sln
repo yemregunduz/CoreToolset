@@ -7,13 +7,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8A328413-179
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{FB266706-13CF-4D8A-A93C-5199E9FB8795}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreToolset.Extensions", "src\CoreToolset.Extensions\CoreToolset.Extensions.csproj", "{02E39666-60B5-4F98-808C-3611E924AA7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreToolset.Extensions", "src\CoreToolset.Extensions\CoreToolset.Extensions.csproj", "{02E39666-60B5-4F98-808C-3611E924AA7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreToolset.Helpers", "src\CoreToolset.Helpers\CoreToolset.Helpers.csproj", "{9C2C3C88-991C-4F99-B727-C83F1D862F48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreToolset.Helpers", "src\CoreToolset.Helpers\CoreToolset.Helpers.csproj", "{9C2C3C88-991C-4F99-B727-C83F1D862F48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreToolset.Helpers.Extensions", "src\CoreToolset.Helpers.Extensions\CoreToolset.Helpers.Extensions.csproj", "{595CC008-A52C-46F9-AD42-5E0D2760A6CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreToolset.Helpers.Extensions", "src\CoreToolset.Helpers.Extensions\CoreToolset.Helpers.Extensions.csproj", "{595CC008-A52C-46F9-AD42-5E0D2760A6CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreToolset.ExtensionsTests", "tests\CoreToolset.ExtensionsTests\CoreToolset.ExtensionsTests.csproj", "{9A9ED77C-C6B3-4D7A-A4CA-D16C5BC08C18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreToolset.ExtensionsTests", "tests\CoreToolset.ExtensionsTests\CoreToolset.ExtensionsTests.csproj", "{9A9ED77C-C6B3-4D7A-A4CA-D16C5BC08C18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreToolset.HelpersTests", "tests\CoreToolset.HelpersTests\CoreToolset.HelpersTests.csproj", "{57271D0D-C0F2-46A8-8706-1A33EB2FD88C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{9A9ED77C-C6B3-4D7A-A4CA-D16C5BC08C18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A9ED77C-C6B3-4D7A-A4CA-D16C5BC08C18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A9ED77C-C6B3-4D7A-A4CA-D16C5BC08C18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57271D0D-C0F2-46A8-8706-1A33EB2FD88C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57271D0D-C0F2-46A8-8706-1A33EB2FD88C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57271D0D-C0F2-46A8-8706-1A33EB2FD88C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57271D0D-C0F2-46A8-8706-1A33EB2FD88C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{9C2C3C88-991C-4F99-B727-C83F1D862F48} = {8A328413-179A-4283-9D9C-C2764D78584F}
 		{595CC008-A52C-46F9-AD42-5E0D2760A6CB} = {8A328413-179A-4283-9D9C-C2764D78584F}
 		{9A9ED77C-C6B3-4D7A-A4CA-D16C5BC08C18} = {FB266706-13CF-4D8A-A93C-5199E9FB8795}
+		{57271D0D-C0F2-46A8-8706-1A33EB2FD88C} = {FB266706-13CF-4D8A-A93C-5199E9FB8795}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {15C4EE63-0D47-4FD4-B8F4-9DE746312171}

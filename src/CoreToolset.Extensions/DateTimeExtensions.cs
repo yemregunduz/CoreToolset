@@ -2,6 +2,7 @@
 {
     public static class DateTimeExtensions
     {
+        #region Is, IsNot
         public static bool IsPassed(this DateTime dateTime, int years = 0, int months = 0, int days = 0, int hours = 0, int minutes = 0, int seconds = 0)
         {
             ArgumentNullException.ThrowIfNull(dateTime);
@@ -47,23 +48,25 @@
             => @this.Month % 2 == 0;
         public static bool IsOddMonth(this DateTime @this)
             => !@this.IsEvenMonth();
-        public static DateTime AddWeeks(this DateTime @this, int weeks)
-            => @this.AddDays(7 * weeks);
+        #endregion
 
+        #region Until
         public static int DaysUntil(this DateTime @this, DateTime until)
             => (int)(until - @this).TotalDays;
 
         public static int WeeksUntil(this DateTime @this, DateTime until)
-            => (int)(until - @this).TotalDays / 7;  
+            => (int)(until - @this).TotalDays / 7;
 
         public static int MonthsUntil(this DateTime @this, DateTime until)
             => (until.Year - @this.Year) * 12 + until.Month - @this.Month;
 
         public static int YearsUntil(this DateTime @this, DateTime until)
             => until.Year - @this.Year;
+        #endregion
 
-        public static long ToUnixTimestamp(this DateTime dateTime)
-            => (long)(dateTime - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalSeconds;
+        #region Add
+        public static DateTime AddWeeks(this DateTime @this, int weeks)
+            => @this.AddDays(7 * weeks);
 
         public static DateTime AddBusinessDays(this DateTime @this, int days)
         {
@@ -88,6 +91,13 @@
             }
             return @this;
         }
+        #endregion
+
+        #region To
+        public static long ToUnixTimestamp(this DateTime dateTime)
+            => (long)(dateTime - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalSeconds;
+        #endregion
+
     }
 }
     

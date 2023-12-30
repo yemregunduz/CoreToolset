@@ -372,8 +372,8 @@ namespace CoreToolset.Extensions
 
             chars.ToList().ForEach(str =>
             {
-                if (str == result.Substring(0, 1))
-                    result = result.Substring(1, result.Length - 1);
+                if (str == result[..1])
+                    result = result[1..];
             });
 
             return result;
@@ -413,15 +413,13 @@ namespace CoreToolset.Extensions
         }
 
         /// <summary>
-        /// Splits the specified string into an array of substrings based on a specified separator.
+        ///     Removes dashes ("-") from the given string value.
         /// </summary>
-        /// <param name="this">The string to be split.</param>
-        /// <param name="separator">The separator string.</param>
-        /// <param name="option">Options for removing empty entries from the result (default: StringSplitOptions.None).</param>
-        /// <returns>An array of substrings.</returns>
-        public static string[] Split(this string @this, string separator, StringSplitOptions option = StringSplitOptions.None)
+        /// <param name="value">The string value that optionally contains dashes.</param>
+        /// <returns></returns>
+        public static string UnDash(this string @this)
         {
-            return @this.Split(new[] { separator }, option);
+            return (@this ?? string.Empty).Replace("-", string.Empty);
         }
         #endregion
 

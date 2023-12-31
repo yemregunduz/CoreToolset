@@ -7,8 +7,10 @@
             if (from > index)
                 throw new ArgumentException($"from: {from} > index: {index}, must from <= index");
 
-            if (index < 0 || size < 0 || from < 0) 
-                throw new ArgumentException($"From: {from}, index: {index} and size: {size} must be greater than 0.");
+            ArgumentOutOfRangeException.ThrowIfNegative(from, nameof(from));
+            ArgumentOutOfRangeException.ThrowIfNegative(index, nameof(index));
+            ArgumentOutOfRangeException.ThrowIfNegative(size, nameof(size));
+
         }
     }
 }

@@ -15,7 +15,7 @@ namespace CoreToolset.ExtensionsTests
             int index = -1;
             int size = 10;
 
-            Assert.Throws<ArgumentException>(() => source.ToPaginate(index, size, -2));
+            Assert.Throws<ArgumentOutOfRangeException>(() => source.ToPaginate(index, size, -2));
         }
 
         [Test]
@@ -25,7 +25,7 @@ namespace CoreToolset.ExtensionsTests
             int index = 2;
             int size = -10;
 
-            Assert.Throws<ArgumentException>(() => source.ToPaginate(index, size));
+            Assert.Throws<ArgumentOutOfRangeException>(() => source.ToPaginate(index, size));
         }
 
         [Test]
@@ -36,7 +36,7 @@ namespace CoreToolset.ExtensionsTests
             int size = 10;
             int from = -1;
 
-            Assert.Throws<ArgumentException>(() => source.ToPaginate(index, size, from));
+            Assert.Throws<ArgumentOutOfRangeException>(() => source.ToPaginate(index, size, from));
         }
 
         [Test]

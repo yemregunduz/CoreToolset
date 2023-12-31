@@ -10,7 +10,6 @@
             ArgumentOutOfRangeException.ThrowIfNegative(from, nameof(from));
             ArgumentOutOfRangeException.ThrowIfNegative(index, nameof(index));
             ArgumentOutOfRangeException.ThrowIfNegative(size, nameof(size));
-
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using CoreToolset.Helpers;
+using CoreToolset.Helpers.Options;
 using System.Security.Cryptography;
 
 
@@ -7,6 +8,13 @@ namespace CoreToolset.HelpersTests
     [TestFixture]
     public class CryptographyHelperTests
     {
+        [Test]
+        public void Constructor_Should_Throw_Exception_On_Null_Options()
+        {
+            CryptographyHelperOptions options = null;
+            Assert.Throws<ArgumentNullException>(() => new CryptographyHelper(options));
+        }
+
         [Test]
         public void EncryptAndDecrypt_ValidPlainText_MatchesOriginal()
         {

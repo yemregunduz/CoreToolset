@@ -8,7 +8,7 @@ namespace CoreToolset.Extensions.Models.Pagination
     /// <typeparam name="T">The type of items in the collection.</typeparam>
     public class Paginate<T> : IPaginate<T>
     {
-        internal Paginate(IEnumerable<T> source, int index, int size, int from)
+        public Paginate(IEnumerable<T> source, int index, int size, int from)
         {
             var enumerable = source as T[] ?? source.ToArray();
 
@@ -37,7 +37,7 @@ namespace CoreToolset.Extensions.Models.Pagination
             }
         }
 
-        internal Paginate()
+        public Paginate()
         {
             Items = Array.Empty<T>();
         }
@@ -52,7 +52,7 @@ namespace CoreToolset.Extensions.Models.Pagination
         public bool HasNext => Index - From + 1 < Pages;
     }
 
-    internal class Paginate<TSource, TResult> : IPaginate<TResult>
+    public class Paginate<TSource, TResult> : IPaginate<TResult>
     {
         public Paginate(IEnumerable<TSource> source, Func<IEnumerable<TSource>, IEnumerable<TResult>> converter,
                         int index, int size, int from)

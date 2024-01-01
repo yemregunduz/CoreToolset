@@ -40,7 +40,7 @@ namespace CoreToolset.Extensions
         /// <typeparam name="TEnum">The enum type.</typeparam>
         /// <param name="enumValue">The enum value.</param>
         /// <returns>The attribute attached to the enum value, or <c>null</c> if the attribute is not found.</returns>
-        public static TAttribute GetAttribute<TAttribute, TEnum>(this TEnum enumValue)
+        public static TAttribute? GetAttribute<TAttribute, TEnum>(this TEnum enumValue)
             where TAttribute : Attribute
             where TEnum : Enum
         {

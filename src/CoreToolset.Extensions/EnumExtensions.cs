@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using CoreToolset.Extensions.Constants;
+using System.ComponentModel;
 
 namespace CoreToolset.Extensions
 {
@@ -64,7 +65,7 @@ namespace CoreToolset.Extensions
         public static bool HasFlag<T>(this T value, T flag) where T : Enum
         {
             if (!typeof(T).IsEnum)
-                throw new ArgumentException("The 'T' type must be an enum.");
+                throw new ArgumentException(CoreStrings.TypeMustBeEnum(typeof(T)));
 
             dynamic dynamicValue = value;
             dynamic dynamicFlag = flag;

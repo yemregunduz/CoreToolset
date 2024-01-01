@@ -434,7 +434,7 @@ namespace CoreToolset.Extensions
             ArgumentException.ThrowIfNullOrWhiteSpace(email, nameof(email));
 
             if (!email.IsEmailAddress())
-                throw new Exception($"{email} > Email is invalid");
+                throw new ArgumentException($"{email} > Email is invalid");
 
             int indexOfAt = email.IndexOf('@');
             return email[(indexOfAt + 1)..];
